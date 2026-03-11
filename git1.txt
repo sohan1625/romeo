@@ -1,0 +1,36 @@
+cd Desktop/GitProject
+
+git init
+
+git remote add origin https://github.com/username/GitProject.git
+
+git config --local user.name "Sohan"
+git config --local user.email "sohan@email.com"
+
+git status
+
+git add .
+
+git commit -m "Initial commit"
+
+git push origin master
+
+git log
+
+git status
+
+(Create another new text document in the folder)
+
+git status
+
+git add .
+
+git status
+
+git commit -m "Added second file"
+
+git push origin master
+
+git clone https://github.com/username/GitProject.git
+
+git reset --hard
