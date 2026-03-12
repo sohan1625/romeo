@@ -1,93 +1,39 @@
-# Create project
-mkdir git-demo
-cd git-demo
+cd Desktop/raj
+
+git config --global user.name "sohanst1625"
+git config --global user.email "sohanst1625@gmail.com"
+
 git init
+git remote add origin https://github.com/sohan1625/git2.git
 
-# Create initial file
-echo "GitHub demo project" > README.md
-
-# First commit
+echo "hello">sin.txt
 git add .
-git commit -m "Initial commit"
+git commit -m "new commit"
+git push origin master
 
-# Connect to remote repository
-git remote add origin https://github.com/username/git-demo.git
-
-# Push main branch
-git branch -M main
-git push -u origin main
-
-
-# Create new branch
-git checkout -b feature1
-
-# Add new feature
-echo "Login feature added" > login.txt
+git checkout -b branch1
+echo "hellobro">sin1.txt
 git add .
-git commit -m "Added login feature"
+git commit -m "first commit"
 
-# Push branch to remote
-git push origin feature1
+git switch master
+git merge branch1
+ls
 
-
-# Show difference between branches
-git diff main feature1
-
-
-# Merge feature branch
-git checkout main
-git merge feature1
-git push origin main
-
-
-# Create another branch for conflict demo
-git checkout -b feature2
-
-# Modify README
-echo "Feature branch update" > README.md
-git add README.md
-git commit -m "Feature2 updated README"
-
-
-# Switch back to main
-git checkout main
-
-# Modify same file differently
-echo "Main branch update" > README.md
-git add README.md
-git commit -m "Main updated README"
-
-
-# Merge branch (this causes conflict)
-git merge feature2
-
-
-# Resolve merge conflict manually in README.md
-git add README.md
-git commit -m "Resolved merge conflict"
-
-
-# Push final changes
-git push origin main
-
-
-# Fork workflow (after clicking Fork on GitHub)
-git clone https://github.com/yourusername/git-demo.git
-cd git-demo
-
-# Add original repo as upstream
-git remote add upstream https://github.com/originaluser/git-demo.git
-
-# Fetch upstream updates
-git fetch upstream
-git merge upstream/main
-
-
-# Create branch for pull request
-git checkout -b feature3
-echo "Feature for pull request" > feature.txt
+echo "ram">sin.txt
 git add .
-git commit -m "Added feature3"
+git commit -m "first1 commit"
 
-# Push branch
-git push origin feature3
+git switch branch1
+echo "rammy">sin.txt
+git add .
+git commit -m "first12 commit"
+
+git switch master
+git merge branch1
+
+git add .
+git commit -m "first123 commit"
+
+git push origin master
+git diff branch1
